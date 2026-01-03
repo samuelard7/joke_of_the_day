@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+    --bg1: #f6f9ff;
+    --bg2: #e8f0ff;
+    --card: #ffffff;
+    --accent: #6C63FF;
+    --muted: #55607a;
+}
+
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color: #0f1724;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+    border-radius:16px;
+    box-shadow: 0 8px 30px rgba(16,24,40,0.12);
+    padding:2rem;
+    text-align:center;
+    backdrop-filter: blur(6px);
+}
+
+h1{
+    margin:0 0 0.5rem 0;
+    font-size:1.75rem;
+    font-weight:700;
+    color:var(--accent);
+    letter-spacing:0.4px;
+}
+
+.joke{
+    margin-top:1rem;
+    background:var(--card);
+    padding:1.25rem 1.5rem;
+    border-radius:12px;
+    border: 1px solid rgba(16,24,40,0.04);
+    box-shadow: 0 4px 20px rgba(16,24,40,0.05);
+}
+
+.joke h2{
+    margin:0;
+    font-weight:600;
+    color:#0b1a2b;
+    font-size:1.125rem;
+    line-height:1.5;
+}
+
+.footer{
+    margin-top:1rem;
+    font-size:0.9rem;
+    color:var(--muted);
+}
+
+@media (max-width:480px){
+    .container{padding:1rem;border-radius:10px}
+    h1{font-size:1.25rem}
+    .joke h2{font-size:1rem}
+}

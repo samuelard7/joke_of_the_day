@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Joke of the Day</h1>
+             <form id="myForm" method="post" action="/joke">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="Any">Any</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Misc">Misc</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Pun">Pun</option>
+                    <option value="Spooky">Spooky</option>
+                    <option value="Christmas">Christmas</option>
+                </select>
+                <button type="submit" id="Go">Get Joke</button>
+        <div class="joke">
+            <h2> <%= partone %>  <%= parttwo %> </h2>
+        </div>
+        </form>
+        <div class="footer">Made by Richard</div>
+    </div>
+</body>
+</html>
