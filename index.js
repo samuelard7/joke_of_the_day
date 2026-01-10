@@ -1,16 +1,24 @@
 import express from "express";
+import 'ejs';
 import axios from "axios";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
+
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 const API_URL = "https://v2.jokeapi.dev/joke/";
 
 app.get("/",async (req,res)=>{
-    res.render("index.ejs", {
+    res.render("index", {
         partone:"",
         parttwo:"",
     })
@@ -33,6 +41,8 @@ app.post("/joke", async (req, res) => {
     }
 });
 
-app.listen(3000,()=>{
-    console.log("Listening to port 3000.");
-})
+// app.listen(3000,()=>{
+//     console.log("Listening to port 3000.");
+// })
+
+export default app;
