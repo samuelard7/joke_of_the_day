@@ -46,3 +46,10 @@ app.post("/joke", async (req, res) => {
 // })
 
 export default app;
+
+// If this file is executed directly (`node index.js`), start the server.
+const currentFile = fileURLToPath(import.meta.url);
+if (process.argv[1] === currentFile) {
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => console.log(`Listening on ${port}`));
+}
